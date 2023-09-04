@@ -20,17 +20,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.restaurantjetpackcompose.R
+import com.example.restaurantjetpackcompose.model.Food
 import java.nio.file.WatchEvent
 
 @Composable
 fun FoodItem(
+    food: Food
 
 ) {
+
+    val imageFood = food.imgFood
+    val foodName = food.foodName
+    val foodDescription = food.foodDescription
+    val price = food.price
 
     ConstraintLayout(
         modifier = Modifier
@@ -70,7 +78,7 @@ fun FoodItem(
         }
 
         Image(
-            painter = painterResource(id = R.drawable.food1),
+            painter = painterResource(imageFood!!),
             contentDescription = null,
             modifier = Modifier
                 .constrainAs(imgFood) {
@@ -83,7 +91,7 @@ fun FoodItem(
         )
 
         Text(
-            text = "Traditional Italian Pizza",
+            text = foodName!!,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White,
@@ -94,24 +102,24 @@ fun FoodItem(
         )
 
         Text(
-            text = "Crispy crust topped with tomato sauce, fresh mozzarella cheese, basil leaves.",
-            fontSize = 14.sp, 
+            text = foodDescription!!,
+            fontSize = 14.sp,
             fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Start,
             color = Color.White,
             modifier = Modifier
                 .constrainAs(txtFoodDescription) {
                     top.linkTo(txtFoodName.bottom)
-                    start.linkTo(containerImg.end, 50.dp)
-                    end.linkTo(parent.end, 16.dp)
+                    start.linkTo(txtFoodName.start, 40.dp)
+                    end.linkTo(parent.end, 70.dp)
                 }
                 .padding(65.dp, 10.dp, 40.dp, 0.dp)
-                .fillMaxWidth()
-
+//                .fillMaxWidth()
         )
 
 
         Text(
-            text = "$ 25.00",
+            text = price!!,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White,
@@ -165,5 +173,12 @@ fun FoodItem(
 @Composable
 @Preview
 private fun FoodItemPreview() {
-    FoodItem()
+    FoodItem(
+        Food(
+            imgFood = R.drawable.food4,
+            foodName = "Pasta with spinach sauce",
+            foodDescription = "White sauce with spinach",
+            price = "$ 23.00"
+        )
+    )
 }
