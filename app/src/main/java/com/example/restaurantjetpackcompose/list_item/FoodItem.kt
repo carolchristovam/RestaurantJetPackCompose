@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -77,7 +78,8 @@ fun FoodItem(
                     start.linkTo(containerImg.start, 0.dp)
                     end.linkTo(containerImg.end, 0.dp)
                     bottom.linkTo(containerImg.bottom, 0.dp)
-                }.size(60.dp)
+                }
+                .size(80.dp)
         )
 
         Text(
@@ -86,25 +88,27 @@ fun FoodItem(
             fontWeight = FontWeight.Bold,
             color = Color.White,
             modifier = Modifier.constrainAs(txtFoodName) {
-                top.linkTo(parent.top, 30.dp)
+                top.linkTo(parent.top, 20.dp)
                 start.linkTo(containerImg.end, 0.dp)
             }
         )
 
         Text(
-            text = "Buffalo mozzarella and tomato sauce",
-            fontSize = 14.sp,
+            text = "Crispy crust topped with tomato sauce, fresh mozzarella cheese, basil leaves.",
+            fontSize = 14.sp, 
             fontWeight = FontWeight.Bold,
             color = Color.White,
             modifier = Modifier
                 .constrainAs(txtFoodDescription) {
                     top.linkTo(txtFoodName.bottom)
-                    start.linkTo(containerImg.end)
-                    end.linkTo(parent.end)
+                    start.linkTo(containerImg.end, 50.dp)
+                    end.linkTo(parent.end, 16.dp)
                 }
-                .padding(65.dp, 10.dp, 40.dp, 0.dp),
-            maxLines = 3
+                .padding(65.dp, 10.dp, 40.dp, 0.dp)
+                .fillMaxWidth()
+
         )
+
 
         Text(
             text = "$ 25.00",
@@ -136,18 +140,21 @@ fun FoodItem(
                 text = "Add Cart",
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
-                color= Color.White
+                color = Color.White
             )
         }
-        
-        Row (
-            modifier = Modifier.width(350.dp).height(3.dp).background(Color.White)
-                .constrainAs(rowItem){
+
+        Row(
+            modifier = Modifier
+                .width(350.dp)
+                .height(3.dp)
+                .background(Color.White)
+                .constrainAs(rowItem) {
                     top.linkTo(txtPrice.bottom, 30.dp)
-                    start.linkTo(parent.start,20.dp)
-                    end.linkTo(parent.end,20.dp)
+                    start.linkTo(parent.start, 20.dp)
+                    end.linkTo(parent.end, 20.dp)
                 }
-                ){
+        ) {
 
         }
 

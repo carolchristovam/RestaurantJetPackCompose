@@ -25,10 +25,13 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
 @Composable
-private fun FoodList(){
+private fun FoodList() {
     Column(
-        modifier = Modifier.fillMaxSize().background(color = Color.Black)
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = Color.Black)
     ) {
 
     }
