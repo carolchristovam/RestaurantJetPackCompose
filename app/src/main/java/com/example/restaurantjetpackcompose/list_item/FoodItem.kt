@@ -5,7 +5,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -27,12 +26,10 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.restaurantjetpackcompose.R
 import com.example.restaurantjetpackcompose.model.Food
-import java.nio.file.WatchEvent
 
 @Composable
 fun FoodItem(
     food: Food
-
 ) {
 
     val imageFood = food.imgFood
@@ -72,9 +69,7 @@ fun FoodItem(
             elevation = CardDefaults.cardElevation(
                 defaultElevation = 8.dp
             )
-
         ) {
-
         }
 
         Image(
@@ -110,13 +105,9 @@ fun FoodItem(
             modifier = Modifier
                 .constrainAs(txtFoodDescription) {
                     top.linkTo(txtFoodName.bottom)
-                    start.linkTo(txtFoodName.start, 40.dp)
-                    end.linkTo(parent.end, 70.dp)
+                    start.linkTo(containerImg.end, 0.dp)
                 }
-                .padding(65.dp, 10.dp, 40.dp, 0.dp)
-//                .fillMaxWidth()
         )
-
 
         Text(
             text = price!!,
@@ -131,7 +122,6 @@ fun FoodItem(
 
         Button(
             onClick = {
-
             },
             modifier = Modifier
                 .height(45.dp)
@@ -162,11 +152,7 @@ fun FoodItem(
                     start.linkTo(parent.start, 20.dp)
                     end.linkTo(parent.end, 20.dp)
                 }
-        ) {
-
-        }
-
-
+        ) {}
     }
 }
 
