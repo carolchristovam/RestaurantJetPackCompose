@@ -36,31 +36,31 @@ private fun FoodList() {
     val foodList: MutableList<Food> = mutableListOf(
         Food(
             imgFood = R.drawable.food1,
-            foodName = "Traditional italian pizza",
+            foodName = "Traditional Italian Pizza",
             foodDescription = "Tomato sauce, mozzarella cheese and basil leaves.",
             price = "$ 20.00"
         ),
         Food(
             imgFood = R.drawable.food2,
-            foodName = "Lasagna Bolognese",
-            foodDescription = "With layers of tomato sauce, ground meat and cheese",
+            foodName = "Bolognese Lasagna ",
+            foodDescription = "With layers of tomato sauce, meat and cheese",
             price = "$ 18.00"
         ),
         Food(
             imgFood = R.drawable.food3,
-            foodName = "Red pasta",
+            foodName = "Red Pasta",
             foodDescription = "Tomato sauce, pepperoni, cheese and herbs",
             price = "$ 17.00"
         ),
         Food(
             imgFood = R.drawable.food4,
-            foodName = "Pasta with spinach sauce",
+            foodName = "Pasta with Spinach Sauce",
             foodDescription = "White sauce with spinach and green herbs",
             price = "$ 23.00"
         ),
         Food(
             imgFood = R.drawable.food5,
-            foodName = "4 cheese macaroni",
+            foodName = "4 Cheese Macaroni",
             foodDescription = "Parmesan, mozzarella, gorgonzola and ricotta",
             price = "$ 25.00"
         ),

@@ -103,19 +103,19 @@ fun FoodItem(
 
         Text(
             text = foodDescription!!,
-            fontSize = 14.sp,
+            fontSize = 13.sp,
             fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Start,
             color = Color.White,
             modifier = Modifier
                 .constrainAs(txtFoodDescription) {
                     top.linkTo(txtFoodName.bottom)
-                    start.linkTo(txtFoodName.start, 40.dp)
-                    end.linkTo(parent.end, 70.dp)
-                }
-                .padding(65.dp, 10.dp, 40.dp, 0.dp)
-//                .fillMaxWidth()
+                    start.linkTo(containerImg.end, 30.dp)
+                    end.linkTo(parent.end, 30.dp)
+                },
+            maxLines = 3
         )
+
+
 
 
         Text(
@@ -126,6 +126,7 @@ fun FoodItem(
             modifier = Modifier.constrainAs(txtPrice) {
                 top.linkTo(txtFoodDescription.bottom, 20.dp)
                 start.linkTo(containerImg.end, 0.dp)
+
             }
         )
 
@@ -146,7 +147,7 @@ fun FoodItem(
         ) {
             Text(
                 text = "Add Cart",
-                fontSize = 18.sp,
+                fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
