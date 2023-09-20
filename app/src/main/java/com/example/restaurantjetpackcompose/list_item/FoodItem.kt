@@ -69,8 +69,8 @@ fun FoodItem(
             elevation = CardDefaults.cardElevation(
                 defaultElevation = 8.dp
             )
-        ) {
-        }
+        ) {}
+
 
         Image(
             painter = painterResource(imageFood!!),
@@ -107,6 +107,8 @@ fun FoodItem(
                     top.linkTo(txtFoodName.bottom)
                     start.linkTo(containerImg.end, 0.dp)
                 }
+                .width(240.dp),
+            softWrap = true
         )
 
         Text(
@@ -163,7 +165,7 @@ private fun FoodItemPreview() {
         Food(
             imgFood = R.drawable.food4,
             foodName = "Pasta with spinach sauce",
-            foodDescription = "White sauce with spinach",
+            foodDescription = "White sauce with spinacsdgsfdgdfgdfgdfgdfh",
             price = "$ 23.00"
         )
     )
