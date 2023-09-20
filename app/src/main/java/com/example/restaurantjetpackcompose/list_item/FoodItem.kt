@@ -136,7 +136,7 @@ fun FoodItem(
         ) {
             Text(
                 text = "Add Cart",
-                fontSize = 18.sp,
+                fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
