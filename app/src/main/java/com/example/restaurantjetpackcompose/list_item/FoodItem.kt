@@ -107,7 +107,7 @@ fun FoodItem(
                     top.linkTo(txtFoodName.bottom)
                     start.linkTo(containerImg.end, 0.dp)
                 }
-                .width(240.dp),
+                .width(200.dp),
             softWrap = true
         )
 
@@ -126,7 +126,7 @@ fun FoodItem(
             onClick = {
             },
             modifier = Modifier
-                .height(45.dp)
+                .height(43.dp)
                 .constrainAs(btAddCart) {
                     top.linkTo(txtFoodDescription.bottom, 10.dp)
                     start.linkTo(txtPrice.end, 10.dp)
@@ -138,7 +138,7 @@ fun FoodItem(
         ) {
             Text(
                 text = "Add Cart",
-                fontSize = 16.sp,
+                fontSize = 14.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
@@ -165,7 +165,7 @@ private fun FoodItemPreview() {
         Food(
             imgFood = R.drawable.food4,
             foodName = "Pasta with spinach sauce",
-            foodDescription = "White sauce with spinacsdgsfdgdfgdfgdfgdfh",
+            foodDescription = "White sauce with spinach",
             price = "$ 23.00"
         )
     )
